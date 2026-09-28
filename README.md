@@ -55,6 +55,16 @@ export default defineWidget({
 That's all a widget can reach. No `fetch`, no storage, no `window` or
 `document`: a widget is a sticker, and the sticker is its whole world.
 
+## Interactive widgets and room themes
+
+- `View({ config, update })`: call `update({ done: '1,3' })` to save what
+  someone tapped (a tick, a date, a count). Fields marked `hidden: true` hold
+  that saved state without showing in the settings card; `lines` is a
+  one-item-per-line field (checklists).
+- Room backgrounds live in `themes/<id>/` and use `defineTheme({ id, name,
+  about, View })`: a full-bleed background drawn in CSS, SVG or canvas, never
+  an image. Calm, slow, and still under reduced motion.
+
 ## How a widget gets into Rooms
 
 1. Fork, add `widgets/<id>/`, try it in `npm run dev`.
