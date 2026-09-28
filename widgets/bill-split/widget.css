@@ -1,0 +1,14 @@
+.w-bill-split{width:210px;padding:16px;box-sizing:border-box;border-radius:12px 12px 22px 22px;background:#fff;color:#1d2433;font:600 12px/1.4 Inter,sans-serif}
+.w-bill-split header{display:grid;gap:4px;border-bottom:1px dashed #cbd4e2;padding-bottom:10px;margin-bottom:12px}
+.w-bill-split header b{font-size:15px}
+.w-bill-split header span{font-size:9px;letter-spacing:.15em;color:#647085}
+.w-bill-split strong{display:block;font-size:24px;color:#1877f2;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.w-bill-split small,.w-bill-split p{color:#647085}
+.w-bill-split p{font-size:11px;min-height:30px}
+.w-bill-split dl{border-top:1px dashed #cbd4e2;padding-top:8px}
+.w-bill-split dl div{display:flex;justify-content:space-between;gap:6px;margin:3px 0}
+.w-bill-split dd{margin:0;font-variant-numeric:tabular-nums}
+.w-bill-split-party{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.w-bill-split button{border:0;border-radius:9px;width:30px;height:30px;background:#edf4ff;color:#1877f2;font:700 18px Inter,sans-serif;cursor:pointer}
+.w-bill-split button:disabled{opacity:.4;cursor:default}
+.w-bill-split button:focus-visible{outline:2px solid #1877f2;outline-offset:2px}

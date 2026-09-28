@@ -1,0 +1,11 @@
+.w-focus-timer{width:210px;box-sizing:border-box;padding:16px;border-radius:22px;background:#fff;color:#1d2433;text-align:center;font:600 12px/1.4 Inter,sans-serif}
+.w-focus-timer header{display:grid;gap:3px}
+.w-focus-timer b{font-size:15px}
+.w-focus-timer header span,.w-focus-timer small{color:#647085;font-size:10px}
+.w-focus-timer-clock{display:grid;place-items:center;width:120px;height:120px;margin:12px auto;border:5px solid #e6f0ff;border-top-color:#1877f2;border-radius:50%;font-size:30px;font-variant-numeric:tabular-nums}
+.w-focus-timer-done .w-focus-timer-clock{border-color:#9be21c;background:linear-gradient(150deg,#fff 60%,#edfacd)}
+.w-focus-timer p{color:#647085;min-height:34px;margin:0 0 10px}
+.w-focus-timer-actions{display:flex;justify-content:center;gap:6px;margin-bottom:8px}
+.w-focus-timer button{border:0;border-radius:10px;padding:9px 12px;background:#1877f2;color:#fff;font:inherit;cursor:pointer}
+.w-focus-timer .w-focus-timer-reset{background:#edf4ff;color:#1877f2}
+.w-focus-timer button:focus-visible{outline:2px solid #1d2433;outline-offset:3px}

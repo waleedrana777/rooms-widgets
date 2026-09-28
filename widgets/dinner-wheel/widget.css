@@ -1,0 +1,10 @@
+.w-dinner-wheel{box-sizing:border-box;width:204px;padding:16px;background:#fff;color:#1d2433;border-radius:20px;text-align:center;font:600 12px/1.4 Inter,sans-serif}
+.w-dinner-wheel>b{font-size:15px}
+.w-dinner-wheel-plate{display:flex;flex-direction:column;justify-content:center;width:116px;min-height:116px;margin:12px auto;border:2px solid #dbe8fa;border-radius:50%;box-shadow:inset 0 0 0 7px #f3f7fd}
+.w-dinner-wheel-plate small{font-size:8px;letter-spacing:.1em;color:#65718a}
+.w-dinner-wheel-plate strong{padding:4px 12px;font-size:20px;overflow-wrap:anywhere}
+.w-dinner-wheel p{min-height:32px;margin:0 0 8px;overflow-wrap:anywhere;color:#65718a}
+.w-dinner-wheel-actions{display:flex;gap:6px}
+.w-dinner-wheel button{border:0;border-radius:10px;padding:9px 7px;background:#edf4ff;color:#1877f2;font:inherit;cursor:pointer}
+.w-dinner-wheel button:disabled{opacity:.45;cursor:default}
+.w-dinner-wheel button:focus-visible{outline:2px solid #1877f2;outline-offset:3px}

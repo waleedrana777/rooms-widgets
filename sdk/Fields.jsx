@@ -8,7 +8,8 @@ import { COLORS } from './index.js';
 // choice: { label, options: [[value, 'Label'], …] }
 // color:  { label } — the eight Rooms colours
 export default function Fields({ fields, value, onChange }) {
-  return Object.entries(fields).map(([key, field]) => {
+  // hidden: true keeps a field out of the card (state the widget saves itself).
+  return Object.entries(fields).filter(([, field]) => !field.hidden).map(([key, field]) => {
     const set = next => onChange({ [key]: next });
     const current = value[key] ?? field.default ?? '';
     if (field.type === 'choice') return <div key={key} className="wcf-seg" role="group" aria-label={field.label || key}>

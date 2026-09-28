@@ -30,7 +30,7 @@ export default defineWidget({
   fields: {
     title: { type: 'text', label: 'Title', max: 24, default: 'Today' },
     items: { type: 'lines', label: 'Items, one per line', max: 300, default: 'Glass of water\nSketch for 20 min\nPost progress' },
-    done: { type: 'text', label: 'Ticked (saved for you)', max: 40, default: '' },
+    done: { type: 'text', label: 'Ticked (saved for you)', max: 40, default: '', hidden: true },
     color: { type: 'color', default: 'black' },
   },
   View: Checklist,

@@ -1,0 +1,14 @@
+.w-water{width:180px;padding:16px;box-sizing:border-box;background:#fff;border-radius:24px;color:#1d2433;text-align:center;font:600 12px/1.4 Inter,sans-serif}
+.w-water header{display:grid;gap:3px}
+.w-water b{font-size:15px}
+.w-water small{color:#647085}
+.w-water-glass{position:relative;isolation:isolate;overflow:hidden;width:64px;height:80px;margin:14px auto;border:3px solid #1877f2;border-top:0;border-radius:4px 4px 22px 22px}
+.w-water-fill{position:absolute;bottom:0;width:100%;background:#cde3ff;transition:height .3s ease;z-index:-1}
+.w-water-glass span{display:block;padding-top:26px;font-size:24px}
+.w-water p{margin:0 0 12px}
+.w-water-actions{display:flex;gap:6px}
+.w-water button{border:0;border-radius:10px;background:#1877f2;color:#fff;padding:8px;font:inherit;cursor:pointer}
+.w-water button:first-child{background:#edf4ff;color:#1877f2}
+.w-water button:disabled{opacity:.45;cursor:default}
+.w-water button:focus-visible{outline:2px solid #1d2433;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.w-water-fill{transition:none}}
