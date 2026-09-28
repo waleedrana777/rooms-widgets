@@ -19,15 +19,15 @@ function Preview() {
       <label><input type="checkbox" checked={small} onChange={event => setSmall(event.target.checked)} /> Small size</label>
     </header>
     <section className={`pv-board ${small ? 'pv-small' : ''}`}>
-      {widgets.map(w => <button key={w.id} type="button" className="pv-slot" aria-pressed={open === w.id} onClick={() => setOpen(w.id)}>
-        <span className="wdg"><w.View config={configs[w.id]} /></span>
+      {widgets.map(w => <div key={w.id} role="button" tabIndex={0} className="pv-slot" aria-pressed={open === w.id} onClick={() => setOpen(w.id)}>
+        <span className="wdg"><w.View config={configs[w.id]} update={patch => setConfigs(all => ({ ...all, [w.id]: { ...all[w.id], ...patch } }))} /></span>
         <small>{w.name}</small>
-      </button>)}
+      </div>)}
     </section>
     {widget && <aside className="wcf">
       <header><strong>{widget.name}</strong><small>{widget.about}</small></header>
       <Fields fields={widget.fields} value={configs[open]} onChange={set} />
-      <div className="wcf-preview"><span className="wdg"><widget.View config={configs[open]} /></span></div>
+      <div className="wcf-preview"><span className="wdg"><widget.View config={configs[open]} update={set} /></span></div>
       <pre>{JSON.stringify(configs[open], null, 1)}</pre>
     </aside>}
   </main>;

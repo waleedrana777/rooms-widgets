@@ -2,8 +2,10 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 
 // The Rooms widget SDK: everything a widget may use, in one small file.
 // A widget is one file that calls defineWidget(). It draws itself from
-// { config }, reads data only through getJson / useData, and never touches
-// the page, storage or the network any other way (scripts/check.mjs).
+// { config, update }, reads data only through getJson / useData, and never
+// touches the page, storage or the network any other way (scripts/check.mjs).
+// update(patch) saves new settings (a ticked box, a picked date); it's a
+// no-op for people who don't own the sticker, so draw from config alone.
 
 // The colours a widget can be tinted with (the same eight as Rooms people).
 export const COLORS = {
@@ -83,7 +85,7 @@ function subscribe(listener) {
 export const useTime = (step = 1000) => useSyncExternalStore(subscribe, () => Math.floor(now / step) * step);
 
 // Field types for a widget's settings; Rooms draws the settings card from these.
-export const FIELD_TYPES = ['text', 'number', 'date', 'choice', 'color'];
+export const FIELD_TYPES = ['text', 'lines', 'number', 'date', 'choice', 'color'];
 
 export function defineWidget(spec) {
   const { id, name, about, fields = {}, View } = spec;

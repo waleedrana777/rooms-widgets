@@ -1,0 +1,8 @@
+.w-days-till{display:grid;justify-items:center;gap:3px;width:150px;box-sizing:border-box;padding:14px 12px 12px;border-radius:20px;background:#fff;color:#1d2433}
+.w-days-till small{color:#8a909b;font:700 10.5px/1.2 Inter,sans-serif;letter-spacing:.06em;text-align:center;text-transform:uppercase}
+.w-days-till b{font:850 52px/1 Inter,sans-serif;letter-spacing:-2px;font-variant-numeric:tabular-nums;color:transparent;
+  background:linear-gradient(100deg,#19c93a,#9be21c 45%,#f2d600);-webkit-background-clip:text;background-clip:text}
+.w-days-till span{color:#4a5263;font:600 12px/1 Inter,sans-serif}
+.w-days-till-date{margin-top:6px;padding:5px 10px;border:0;border-radius:999px;background:#f0f2f5;color:#1d2433;font:700 11.5px/1 Inter,sans-serif;cursor:pointer}
+.w-days-till-date:disabled{cursor:default}
+.w-days-till-pick{margin-top:6px;padding:3px 6px;border:0;border-radius:8px;background:#f0f2f5;font:600 12px/1.2 Inter,sans-serif}
