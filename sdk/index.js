@@ -97,3 +97,13 @@ export function defineWidget(spec) {
   const defaults = Object.fromEntries(Object.entries(fields).map(([key, field]) => [key, field.default ?? '']));
   return Object.freeze({ id, name, about, fields, defaults, View });
 }
+
+// Room themes: a background drawn in code (CSS, SVG or canvas), never an
+// image. View draws full-bleed into whatever box it's given, calm and quiet
+// enough to sit behind text; motion loops slowly and stops under reduced motion.
+export function defineTheme(spec) {
+  const { id, name, about, View } = spec;
+  if (!/^[a-z][a-z0-9-]{1,23}$/.test(id || '')) throw new Error(`Theme id "${id}": 2–24 lowercase letters, digits or dashes.`);
+  if (!name || !about || typeof View !== 'function') throw new Error(`Theme ${id}: needs name, about and View.`);
+  return Object.freeze({ id, name, about, View, theme: true });
+}

@@ -4,7 +4,8 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = process.env.WIDGETS_DIR || fileURLToPath(new URL('../widgets/', import.meta.url));
+const ROOTS = process.env.WIDGETS_DIR ? [[process.env.WIDGETS_DIR, 'defineWidget']]
+  : [[fileURLToPath(new URL('../widgets/', import.meta.url)), 'defineWidget'], [fileURLToPath(new URL('../themes/', import.meta.url)), 'defineTheme']];
 const FILES = ['index.jsx', 'widget.css', 'README.md'];
 const IMPORTS = ['react', '../../sdk/index.js', './widget.css'];
 const MAX_LINES = 200;
@@ -41,8 +42,9 @@ function classTokens(value) {
 const problems = [];
 const fail = (file, message) => problems.push(`${file}: ${message}`);
 
-const ids = readdirSync(ROOT, { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => entry.name);
-for (const id of ids) {
+const ids = [];
+for (const [ROOT, maker] of ROOTS) for (const id of readdirSync(ROOT, { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => entry.name)) {
+  ids.push(id);
   const dir = join(ROOT, id);
   if (!/^[a-z][a-z0-9-]{1,23}$/.test(id)) fail(id, 'folder name: 2–24 lowercase letters, digits or dashes');
   const files = readdirSync(dir);
@@ -64,7 +66,7 @@ for (const id of ids) {
       for (const [pattern, why] of BANNED) if (pattern.test(code)) fail(path, `${why} (${code.match(pattern)[0]})`);
       const declared = code.match(/\bid:\s*['"]([^'"]+)['"]/)?.[1];
       if (declared !== id) fail(path, `defineWidget id is "${declared}", but the folder is "${id}"`);
-      if (!/export\s+default\s+defineWidget\s*\(/.test(code)) fail(path, 'must `export default defineWidget({ … })`');
+      if (!new RegExp(`export\\s+default\\s+${maker}\\s*\\(`).test(code)) fail(path, `must \`export default ${maker}({ … })\``);
       for (const [, value] of code.matchAll(/className=("[^"]*"|\{[^\n]*?\}(?=[\s/>]))/g)) {
         for (const c of classTokens(value)) if (!c.startsWith(`w-${id}`)) fail(path, `class "${c}" should start with w-${id}`);
       }

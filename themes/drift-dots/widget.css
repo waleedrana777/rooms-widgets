@@ -1,0 +1,5 @@
+.w-drift-dots{position:absolute;inset:0;overflow:hidden;background:#fbfbf8}
+.w-drift-dots i{position:absolute;inset:-40px;background:radial-gradient(#dfe3ea 1.4px,transparent 1.8px) 0 0/26px 26px;animation:w-drift-dots-move 60s linear infinite}
+.w-drift-dots i+i{background:radial-gradient(ellipse at 10% 90%,#d9f7a680,transparent 45%),radial-gradient(ellipse at 95% 10%,#fff3a880,transparent 40%);animation:none}
+@keyframes w-drift-dots-move{to{transform:translate(26px,26px)}}
+@media (prefers-reduced-motion:reduce){.w-drift-dots i{animation:none}}

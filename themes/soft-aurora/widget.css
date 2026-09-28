@@ -1,0 +1,7 @@
+.w-soft-aurora{position:absolute;inset:0;overflow:hidden;background:#f8fafc}
+.w-soft-aurora i{position:absolute;width:55%;height:60%;border-radius:50%;filter:blur(70px);opacity:.55;animation:w-soft-aurora-breathe 24s ease-in-out infinite}
+.w-soft-aurora i:nth-child(1){left:-10%;top:-10%;background:#bcd9ff}
+.w-soft-aurora i:nth-child(2){right:-12%;top:20%;background:#c6f3dc;animation-delay:-8s}
+.w-soft-aurora i:nth-child(3){left:25%;bottom:-20%;background:#fff1a6;animation-delay:-16s}
+@keyframes w-soft-aurora-breathe{50%{transform:translate(6%,4%) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.w-soft-aurora i{animation:none}}
