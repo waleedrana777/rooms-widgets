@@ -26,7 +26,7 @@ export default defineWidget({
   about: 'Your team’s match, live while it’s on and the result after. Watch it together in the room.',
   fields: {
     team: { type: 'text', label: 'Your team', max: 40, placeholder: 'Ajax', default: 'Ajax' },
-    vs: { type: 'text', label: 'Against (optional)', max: 40, placeholder: 'Liverpool', default: 'Liverpool' },
+    vs: { type: 'text', label: 'Against (optional)', max: 40, placeholder: 'Liverpool', default: '' },
   },
   View: LiveScore,
 });

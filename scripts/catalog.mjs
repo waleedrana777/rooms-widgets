@@ -1,6 +1,6 @@
 // The library as the widget agent sees it: every widget's id, name, about and
 // its settings (fields), so the agent can set one up instead of writing code.
-// node scripts/catalog.mjs > ../ops/widget-agent/catalog.json
+// node scripts/catalog.mjs > ../ops/widget-agent/catalog.json && cp ../ops/widget-agent/catalog.json ../edge/src/catalog.json
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
