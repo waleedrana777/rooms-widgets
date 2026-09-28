@@ -1,0 +1,13 @@
+.w-live-score{display:grid;gap:8px;width:230px;box-sizing:border-box;padding:12px 14px;border-radius:18px;background:#fff;color:#1d2433}
+.w-live-score header{display:flex;align-items:center;justify-content:space-between}
+.w-live-score header small{max-width:150px;overflow:hidden;color:#8a909b;font:700 10.5px/1.2 Inter,sans-serif;letter-spacing:.05em;text-overflow:ellipsis;text-transform:uppercase;white-space:nowrap}
+.w-live-score-live{display:inline-flex;align-items:center;gap:5px;color:#19c93a;font:800 10.5px/1 Inter,sans-serif;letter-spacing:.08em}
+.w-live-score-live i{width:7px;height:7px;border-radius:50%;background:#19c93a;box-shadow:0 0 8px #9be21c;animation:w-live-score-pulse 1.4s ease-in-out infinite}
+@keyframes w-live-score-pulse{50%{opacity:.3}}
+.w-live-score-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.w-live-score-row span{overflow:hidden;font:700 13px/1.2 Inter,sans-serif;text-overflow:ellipsis;white-space:nowrap}
+.w-live-score-row span:last-child{text-align:right}
+.w-live-score-row strong{font:850 26px/1 Inter,sans-serif;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.w-live-score-on .w-live-score-row strong{color:#12a83a}
+.w-live-score footer{color:#8a909b;font:600 11px/1.2 Inter,sans-serif}
+@media (prefers-reduced-motion:reduce){.w-live-score-live i{animation:none}}
