@@ -1,0 +1,22 @@
+name: check
+on: [pull_request, push]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check.mjs
+      - name: Flag changes outside widgets/
+        if: github.event_name == 'pull_request'
+        run: |
+          outside=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -v '^widgets/' || true)
+          if [ -n "$outside" ]; then echo "::warning::This pull request changes files outside widgets/: $outside"; fi
+      - run: npm ci || npm install
+      - run: npm run build

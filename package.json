@@ -1,0 +1,21 @@
+{
+  "name": "rooms-widgets",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Widgets for Rooms: small, living stickers anyone can build.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "check": "node scripts/check.mjs",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.4"
+  }
+}

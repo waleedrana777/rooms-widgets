@@ -1,0 +1,6 @@
+/* A ticket stub: coloured, with two bites out of the sides. */
+.w-countdown{display:grid;justify-items:center;gap:3px;min-width:96px;padding:12px 16px 11px;border-radius:12px;background:var(--w);color:#fff;
+  -webkit-mask:radial-gradient(circle 7px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 7px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+  mask:radial-gradient(circle 7px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 7px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat}
+.w-countdown b{font:850 38px/1 Inter,sans-serif;letter-spacing:-1.5px;font-variant-numeric:tabular-nums}
+.w-countdown small{color:#ffffffd9;font:700 10.5px/1.2 Inter,sans-serif;text-align:center}

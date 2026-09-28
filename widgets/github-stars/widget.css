@@ -1,0 +1,4 @@
+.w-github-stars{display:grid;justify-items:start;gap:4px;min-width:110px;padding:10px 14px 11px;border-radius:14px;background:var(--w);color:#fff}
+.w-github-stars b{display:flex;align-items:center;gap:6px;font:850 24px/1 Inter,sans-serif;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.w-github-stars i{color:#ffd23f;font-style:normal;font-size:20px}
+.w-github-stars small{max-width:150px;overflow:hidden;color:#ffffffc2;font:600 10.5px/1.2 Inter,sans-serif;text-overflow:ellipsis;white-space:nowrap}
